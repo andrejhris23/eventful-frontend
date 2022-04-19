@@ -126,7 +126,9 @@ const trendingPosts = [
   // More posts...
 ];
 
-function classNames(...classes) {
+const currentTab = tabs.find(tab => tab.current);
+
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
@@ -415,7 +417,7 @@ export default function Example() {
                   <select
                     id='question-tabs'
                     className='block w-full rounded-md border-gray-300 text-base font-medium text-gray-900 shadow-sm focus:border-rose-500 focus:ring-rose-500'
-                    defaultValue={tabs.find((tab) => tab.current).name}
+                    defaultValue={currentTab!.name}
                   >
                     {tabs.map((tab) => (
                       <option key={tab.name}>{tab.name}</option>
