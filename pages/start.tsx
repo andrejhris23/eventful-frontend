@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import Example from '../src/components/starter.jsx';
+import Example from '../components/example';
 
 const Start: NextPage = () => {
   return <Example />;
