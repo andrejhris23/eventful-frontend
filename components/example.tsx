@@ -59,8 +59,28 @@ const questions = [
     },
     date: 'December 9 at 11:43 AM',
     datetime: '2020-12-09T11:43:00',
-    href: '#',
+    href: '/event',
     title: 'What would you have done differently if you ran Jurassic Park?',
+    body: `
+      <p>Jurassic Park was an incredible idea and a magnificent feat of engineering, but poor protocols and a disregard for human safety killed what could have otherwise been one of the best businesses of our generation.</p>
+      <p>Ultimately, I think that if you wanted to run the park successfully and keep visitors safe, the most important thing to prioritize would be&hellip;</p>
+    `,
+  },
+
+  {
+    id: '81561',
+    likes: '178',
+    replies: '41',
+    views: '2.7k',
+    author: {
+      name: 'Ivan Gadjovski',
+      imageUrl: 'https://i.imgur.com/iyrxPDT.jpg',
+      href: '#',
+    },
+    date: 'December 9 at 11:43 AM',
+    datetime: '2020-12-09T11:43:00',
+    href: '/event',
+    title: 'Smoke Mardeljano Film Institution Tebra, Inc.',
     body: `
       <p>Jurassic Park was an incredible idea and a magnificent feat of engineering, but poor protocols and a disregard for human safety killed what could have otherwise been one of the best businesses of our generation.</p>
       <p>Ultimately, I think that if you wanted to run the park successfully and keep visitors safe, the most important thing to prioritize would be&hellip;</p>

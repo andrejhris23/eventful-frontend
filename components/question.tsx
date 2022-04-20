@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { Menu, Popover, Transition } from '@headlessui/react';
+import Link from 'next';
 import {
   ChatAltIcon,
   CodeIcon,
@@ -203,23 +204,21 @@ export default function Question(question: {
                 type='button'
                 className='inline-flex space-x-2 text-gray-400 hover:text-gray-500'
               >
-                <EyeIcon className='h-5 w-5' aria-hidden='true' />
-                <span className='font-medium text-gray-900'>
-                  {question.views}
-                </span>
-                <span className='sr-only'>views</span>
+                <ShareIcon className='h-5 w-5' aria-hidden='true' />
+                <span className='font-medium text-gray-900'>Share</span>
               </button>
             </span>
           </div>
           <div className='flex text-sm'>
             <span className='inline-flex items-center text-sm'>
-              <button
-                type='button'
-                className='inline-flex space-x-2 text-gray-400 hover:text-gray-500'
-              >
-                <ShareIcon className='h-5 w-5' aria-hidden='true' />
-                <span className='font-medium text-gray-900'>Share</span>
-              </button>
+              <a href={question.href}>
+                <button
+                  type='button'
+                  className='inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+                >
+                  Read More
+                </button>
+              </a>
             </span>
           </div>
         </div>
