@@ -40,6 +40,12 @@ export default function newEvent() {
     event.preventDefault();
 
     console.log(formFields);
+
+    // for (const formField in formFields){
+    //   if (typeof formField === 'number'){
+    //     formField = {value: ''};
+    //   }
+    // }
   };
 
   return (
@@ -171,25 +177,6 @@ export default function newEvent() {
                   </div>
                   <div className='mt-5 md:mt-0 md:col-span-2'>
                     <div className='grid grid-cols-6 gap-6'>
-                      <div className='col-span-6 sm:col-span-4'>
-                        <label
-                          htmlFor='email-address'
-                          className='block text-sm font-medium text-gray-700'
-                        >
-                          Location Name
-                        </label>
-                        <input
-                          required
-                          type='text'
-                          name='location'
-                          value={location}
-                          onChange={handleChange}
-                          id='location'
-                          placeholder='If any'
-                          className='mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md'
-                        />
-                      </div>
-
                       <div className='col-span-6 sm:col-span-3'>
                         <label
                           htmlFor='country'
@@ -209,6 +196,24 @@ export default function newEvent() {
                           <option>Canada</option>
                           <option>Mexico</option>
                         </select>
+                      </div>
+                      <div className='col-span-6 sm:col-span-4'>
+                        <label
+                          htmlFor='email-address'
+                          className='block text-sm font-medium text-gray-700'
+                        >
+                          Location Name
+                        </label>
+                        <input
+                          required
+                          type='text'
+                          name='location'
+                          value={location}
+                          onChange={handleChange}
+                          id='location'
+                          placeholder='Metropolis Arena'
+                          className='mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md'
+                        />
                       </div>
 
                       <div className='col-span-6'>
@@ -320,7 +325,7 @@ export default function newEvent() {
                       />
                     </div>
                     <fieldset>
-                      <div>
+                      <div className='mt-6'>
                         <legend className='text-base font-medium text-gray-900'>
                           Entry Fee
                         </legend>
@@ -395,7 +400,7 @@ export default function newEvent() {
               </div>
 
               <div className='flex justify-end'>
-                <a href='/start'>
+                <a href='/'>
                   <button
                     type='button'
                     className='bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
