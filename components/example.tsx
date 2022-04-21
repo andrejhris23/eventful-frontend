@@ -240,6 +240,7 @@ export default function Example() {
               <ul role='list' className='space-y-4'>
                 {questions.map((question) => (
                   <Question
+                    key={question.id}
                     id={question.id}
                     likes={question.likes}
                     replies={question.replies}

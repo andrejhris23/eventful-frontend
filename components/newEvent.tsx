@@ -14,7 +14,7 @@ const defaultFormFields = {
   cost: 0,
 };
 
-export default function newEvent() {
+export default function NewEvent() {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const {
     eventName,

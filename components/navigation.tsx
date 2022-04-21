@@ -22,6 +22,7 @@ import {
   UserGroupIcon,
   XIcon,
 } from '@heroicons/react/outline';
+import Link from 'next/link';
 
 const user = {
   name: 'Chelsea Hagon',
@@ -66,7 +67,9 @@ export default function Navigation() {
             <div className='relative flex justify-between xl:grid xl:grid-cols-12 lg:gap-8'>
               <div className='flex md:absolute md:left-0 md:inset-y-0 lg:static xl:col-span-2'>
                 <div className='flex-shrink-0 flex items-center'>
-                  <a className='flex items-center' href='/'>
+                  <Link href='/'>
+                  <a className='flex items-center'>
+                  
                     <img
                       className='inline h-8 w-auto'
                       src='https://tailwindui.com/img/logos/workflow-mark.svg?color=rose&shade=500'
@@ -76,6 +79,7 @@ export default function Navigation() {
                       Eventful
                     </h2>
                   </a>
+                  </Link>
                 </div>
               </div>
               <div className='min-w-0 flex-1 md:px-8 lg:px-0 xl:col-span-6'>
