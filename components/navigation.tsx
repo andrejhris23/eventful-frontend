@@ -8,6 +8,7 @@ import {
   FlagIcon,
   PlusSmIcon,
   SearchIcon,
+  ThumbDownIcon,
   ShareIcon,
   StarIcon,
   ThumbUpIcon,
