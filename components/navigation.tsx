@@ -1,18 +1,6 @@
 import { Fragment } from 'react';
 import { Menu, Popover, Transition } from '@headlessui/react';
-import {
-  ChatAltIcon,
-  CodeIcon,
-  DotsVerticalIcon,
-  EyeIcon,
-  FlagIcon,
-  PlusSmIcon,
-  SearchIcon,
-  ThumbDownIcon,
-  ShareIcon,
-  StarIcon,
-  ThumbUpIcon,
-} from '@heroicons/react/solid';
+import { SearchIcon } from '@heroicons/react/solid';
 import {
   BellIcon,
   FireIcon,
@@ -37,8 +25,8 @@ const navigation = [
   { name: 'Trending', href: '#', icon: TrendingUpIcon, current: false },
 ];
 const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
+  { name: 'Your Profile', href: '/user/profile' },
+  { name: 'Settings', href: '/user/settings' },
   { name: 'Sign out', href: '#' },
 ];
 
@@ -68,17 +56,16 @@ export default function Navigation() {
               <div className='flex md:absolute md:left-0 md:inset-y-0 lg:static xl:col-span-2'>
                 <div className='flex-shrink-0 flex items-center'>
                   <Link href='/'>
-                  <a className='flex items-center'>
-                  
-                    <img
-                      className='inline h-8 w-auto'
-                      src='https://tailwindui.com/img/logos/workflow-mark.svg?color=rose&shade=500'
-                      alt='Workflow'
-                    />
-                    <h2 className='text-3xl font-bold ml-2 inline-block flex-row items-center'>
-                      Eventful
-                    </h2>
-                  </a>
+                    <a className='flex items-center'>
+                      <img
+                        className='inline h-8 w-auto'
+                        src='https://tailwindui.com/img/logos/workflow-mark.svg?color=rose&shade=500'
+                        alt='Workflow'
+                      />
+                      <h2 className='text-3xl font-bold ml-2 inline-block flex-row items-center'>
+                        Eventful
+                      </h2>
+                    </a>
                   </Link>
                 </div>
               </div>
@@ -119,7 +106,7 @@ export default function Navigation() {
               </div>
               <div className='hidden lg:flex lg:items-center lg:justify-end xl:col-span-4'>
                 <a
-                  href='#'
+                  href='/blogs'
                   className='text-sm font-medium text-gray-900 hover:underline'
                 >
                   Blogs
