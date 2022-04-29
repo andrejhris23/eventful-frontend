@@ -43,10 +43,13 @@ export default function NewEvent() {
     console.log(formFields);
 
     try {
-      const response = await Axios({
-        url: '/create',
-        data: formFields,
+      const response = await Axios.post('http://localhost:8080/event/create', null, {
+        params: {
+          
+        }
       });
+
+      const event = response.data;
     } catch (error) {
       console.log(error);
     }
