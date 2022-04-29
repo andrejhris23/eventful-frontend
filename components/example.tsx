@@ -132,7 +132,7 @@ export default function Example() {
 
       <div className='py-10'>
         <div className='max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8'>
-          <div className='hidden lg:block lg:col-span-3 xl:col-span-2'>
+          {/* <div className='hidden lg:block lg:col-span-3 xl:col-span-2'>
             <nav
               aria-label='Sidebar'
               className='sticky top-4 divide-y divide-gray-300'
@@ -186,8 +186,8 @@ export default function Example() {
                 </div>
               </div>
             </nav>
-          </div>
-          <main className='lg:col-span-9 xl:col-span-6'>
+          </div> */}
+          <main className='lg:col-span-12 xl:col-span-8'>
             <div className='px-4 sm:px-0'>
               <div className='sm:hidden'>
                 <label htmlFor='question-tabs' className='sr-only'>
