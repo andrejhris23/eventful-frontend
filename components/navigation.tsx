@@ -111,13 +111,6 @@ export default function Navigation() {
                 >
                   Blogs
                 </a>
-                <a
-                  href='#'
-                  className='ml-5 flex-shrink-0 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500'
-                >
-                  <span className='sr-only'>View notifications</span>
-                  <BellIcon className='h-6 w-6' aria-hidden='true' />
-                </a>
 
                 {/* Profile dropdown */}
                 <Menu as='div' className='flex-shrink-0 relative ml-5'>
