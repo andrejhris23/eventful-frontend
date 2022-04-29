@@ -27,6 +27,7 @@ import {
   UserIcon,
 } from '@heroicons/react/solid';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import Event from '../pages/event';
 
 const user = {
   name: 'Whitney Francis',
@@ -147,9 +148,9 @@ export default function Inside() {
                   Ricardo Cooper
                 </h1>
                 <p className='text-sm font-medium text-gray-500'>
-                  Applied for{' '}
+                  Organizing{' '}
                   <a href='#' className='text-gray-900'>
-                    Front End Developer
+                    EventName
                   </a>{' '}
                   on <time dateTime='2020-08-25'>August 25, 2020</time>
                 </p>
@@ -158,15 +159,9 @@ export default function Inside() {
             <div className='mt-6 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-x-reverse sm:space-y-0 sm:space-x-3 md:mt-0 md:flex-row md:space-x-3'>
               <button
                 type='button'
-                className='inline-flex items-center justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500'
-              >
-                Disqualify
-              </button>
-              <button
-                type='button'
                 className='inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500'
               >
-                Advance to offer
+                Attend Event
               </button>
             </div>
           </div>
@@ -181,17 +176,17 @@ export default function Inside() {
                       id='applicant-information-title'
                       className='text-lg leading-6 font-medium text-gray-900'
                     >
-                      Applicant Information
+                      Event Information
                     </h2>
                     <p className='mt-1 max-w-2xl text-sm text-gray-500'>
-                      Personal details and application.
+                      Learn more about this event
                     </p>
                   </div>
                   <div className='border-t border-gray-200 px-4 py-5 sm:px-6'>
                     <dl className='grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2'>
                       <div className='sm:col-span-1'>
                         <dt className='text-sm font-medium text-gray-500'>
-                          Application for
+                          Event Name
                         </dt>
                         <dd className='mt-1 text-sm text-gray-900'>
                           Backend Developer
@@ -199,24 +194,26 @@ export default function Inside() {
                       </div>
                       <div className='sm:col-span-1'>
                         <dt className='text-sm font-medium text-gray-500'>
-                          Email address
+                          Location
                         </dt>
                         <dd className='mt-1 text-sm text-gray-900'>
-                          ricardocooper@example.com
+                          Opera House
                         </dd>
                       </div>
                       <div className='sm:col-span-1'>
                         <dt className='text-sm font-medium text-gray-500'>
-                          Salary expectation
+                          Event Capacity
                         </dt>
-                        <dd className='mt-1 text-sm text-gray-900'>$120,000</dd>
+                        <dd className='mt-1 text-sm text-gray-900'>
+                          30.000 seats
+                        </dd>
                       </div>
                       <div className='sm:col-span-1'>
                         <dt className='text-sm font-medium text-gray-500'>
-                          Phone
+                          Address
                         </dt>
                         <dd className='mt-1 text-sm text-gray-900'>
-                          +1 555-555-5555
+                          55 Market St, Sydney, Australia
                         </dd>
                       </div>
                       <div className='sm:col-span-2'>
@@ -233,7 +230,15 @@ export default function Inside() {
                         </dd>
                       </div>
                       <div className='sm:col-span-2'>
-                        <dt className='text-sm font-medium text-gray-500'>
+                        <img
+                          className='w-full rounded-lg'
+                          src='https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1712&q=80'
+                          alt=''
+                          width={1310}
+                          height={873}
+                        />
+
+                        {/* <dt className='text-sm font-medium text-gray-500'>
                           Attachments
                         </dt>
                         <dd className='mt-1 text-sm text-gray-900'>
@@ -266,7 +271,7 @@ export default function Inside() {
                               </li>
                             ))}
                           </ul>
-                        </dd>
+                        </dd> */}
                       </div>
                     </dl>
                   </div>
@@ -275,117 +280,13 @@ export default function Inside() {
                       href='#'
                       className='block bg-gray-50 text-sm font-medium text-gray-500 text-center px-4 py-4 hover:text-gray-700 sm:rounded-b-lg'
                     >
-                      Read full application
+                      Attend Event
                     </a>
                   </div>
                 </div>
               </section>
 
               {/* Comments*/}
-              <section aria-labelledby='notes-title'>
-                <div className='bg-white shadow sm:rounded-lg sm:overflow-hidden'>
-                  <div className='divide-y divide-gray-200'>
-                    <div className='px-4 py-5 sm:px-6'>
-                      <h2
-                        id='notes-title'
-                        className='text-lg font-medium text-gray-900'
-                      >
-                        Notes
-                      </h2>
-                    </div>
-                    <div className='px-4 py-6 sm:px-6'>
-                      <ul role='list' className='space-y-8'>
-                        {comments.map((comment) => (
-                          <li key={comment.id}>
-                            <div className='flex space-x-3'>
-                              <div className='flex-shrink-0'>
-                                <img
-                                  className='h-10 w-10 rounded-full'
-                                  src={`https://images.unsplash.com/photo-${comment.imageId}?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80`}
-                                  alt=''
-                                />
-                              </div>
-                              <div>
-                                <div className='text-sm'>
-                                  <a
-                                    href='#'
-                                    className='font-medium text-gray-900'
-                                  >
-                                    {comment.name}
-                                  </a>
-                                </div>
-                                <div className='mt-1 text-sm text-gray-700'>
-                                  <p>{comment.body}</p>
-                                </div>
-                                <div className='mt-2 text-sm space-x-2'>
-                                  <span className='text-gray-500 font-medium'>
-                                    {comment.date}
-                                  </span>{' '}
-                                  <span className='text-gray-500 font-medium'>
-                                    &middot;
-                                  </span>{' '}
-                                  <button
-                                    type='button'
-                                    className='text-gray-900 font-medium'
-                                  >
-                                    Reply
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                  <div className='bg-gray-50 px-4 py-6 sm:px-6'>
-                    <div className='flex space-x-3'>
-                      <div className='flex-shrink-0'>
-                        <img
-                          className='h-10 w-10 rounded-full'
-                          src={user.imageUrl}
-                          alt=''
-                        />
-                      </div>
-                      <div className='min-w-0 flex-1'>
-                        <form action='#'>
-                          <div>
-                            <label htmlFor='comment' className='sr-only'>
-                              About
-                            </label>
-                            <textarea
-                              id='comment'
-                              name='comment'
-                              rows={3}
-                              className='shadow-sm block w-full focus:ring-blue-500 focus:border-blue-500 sm:text-sm border border-gray-300 rounded-md'
-                              placeholder='Add a note'
-                              defaultValue={''}
-                            />
-                          </div>
-                          <div className='mt-3 flex items-center justify-between'>
-                            <a
-                              href='#'
-                              className='group inline-flex items-start text-sm space-x-2 text-gray-500 hover:text-gray-900'
-                            >
-                              <QuestionMarkCircleIcon
-                                className='flex-shrink-0 h-5 w-5 text-gray-400 group-hover:text-gray-500'
-                                aria-hidden='true'
-                              />
-                              <span>Some HTML is okay.</span>
-                            </a>
-                            <button
-                              type='submit'
-                              className='inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
-                            >
-                              Comment
-                            </button>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
             </div>
 
             <section
