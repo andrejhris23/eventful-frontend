@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Axios from '../utils/axios';
 
 const defaultFormFields = {
   eventName: '',
@@ -41,6 +42,15 @@ export default function NewEvent() {
 
     console.log(formFields);
 
+    try {
+      const response = await Axios({
+        url: '/create',
+        data: formFields,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+
     // for (const formField in formFields){
     //   if (typeof formField === 'number'){
     //     formField = {value: ''};
@@ -56,7 +66,7 @@ export default function NewEvent() {
           {/* Content goes here */}
           <form
             className='space-y-6 divide-y'
-            action='#'
+            action='/create' //dali 'action' e isto so 'url' vo handleSubmit axios post requestot ?
             method='POST'
             onSubmit={handleSubmit}
           >
@@ -330,7 +340,8 @@ export default function NewEvent() {
                           Entry Fee
                         </legend>
                         <p className='text-sm text-gray-500'>
-                          We&apos;ve partnered with Stripe for simplified billing.
+                          We&apos;ve partnered with Stripe for simplified
+                          billing.
                         </p>
                       </div>
                       <div className='mt-4 space-y-4'>
@@ -400,12 +411,12 @@ export default function NewEvent() {
               </div>
 
               <div className='flex justify-end'>
-                  <button
-                    type='button'
-                    className='bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
-                  >
-                    Cancel
-                  </button>
+                <button
+                  type='button'
+                  className='bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+                >
+                  Cancel
+                </button>
                 <button
                   type='submit'
                   className='ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'

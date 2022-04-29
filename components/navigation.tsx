@@ -11,6 +11,7 @@ import {
   XIcon,
 } from '@heroicons/react/outline';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const user = {
   name: 'Chelsea Hagon',
@@ -57,7 +58,7 @@ export default function Navigation() {
                 <div className='flex-shrink-0 flex items-center'>
                   <Link href='/'>
                     <a className='flex items-center'>
-                      <img
+                      <Image
                         className='inline h-8 w-auto'
                         src='https://tailwindui.com/img/logos/workflow-mark.svg?color=rose&shade=500'
                         alt='Workflow'
@@ -105,19 +106,18 @@ export default function Navigation() {
                 </Popover.Button>
               </div>
               <div className='hidden lg:flex lg:items-center lg:justify-end xl:col-span-4'>
-                <a
-                  href='/blogs'
-                  className='text-sm font-medium text-gray-900 hover:underline'
-                >
-                  Blogs
-                </a>
+                <Link href='/blogs'>
+                  <a className='text-sm font-medium text-gray-900 hover:underline'>
+                    Blogs
+                  </a>
+                </Link>
 
                 {/* Profile dropdown */}
                 <Menu as='div' className='flex-shrink-0 relative ml-5'>
                   <div>
                     <Menu.Button className='bg-white rounded-full flex focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500'>
                       <span className='sr-only'>Open user menu</span>
-                      <img
+                      <Image
                         className='h-8 w-8 rounded-full'
                         src={user.imageUrl}
                         alt=''
@@ -153,11 +153,9 @@ export default function Navigation() {
                   </Transition>
                 </Menu>
                 <Link href='/createEvent'>
-                <a
-                  className='ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-rose-600 hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500'
-                >
-                  New Event
-                </a>
+                  <a className='ml-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-rose-600 hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500'>
+                    New Event
+                  </a>
                 </Link>
               </div>
             </div>
@@ -184,7 +182,7 @@ export default function Navigation() {
             <div className='border-t border-gray-200 pt-4'>
               <div className='max-w-3xl mx-auto px-4 flex items-center sm:px-6'>
                 <div className='flex-shrink-0'>
-                  <img
+                  <Image
                     className='h-10 w-10 rounded-full'
                     src={user.imageUrl}
                     alt=''

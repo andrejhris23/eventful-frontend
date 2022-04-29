@@ -28,6 +28,7 @@ import {
 } from '@heroicons/react/solid';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 import Event from '../pages/event';
+import Image from 'next/image';
 
 const user = {
   name: 'Whitney Francis',
@@ -132,7 +133,7 @@ export default function Inside() {
             <div className='flex items-center space-x-5'>
               <div className='flex-shrink-0'>
                 <div className='relative'>
-                  <img
+                  <Image
                     className='h-16 w-16 rounded-full'
                     src='https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
                     alt=''
@@ -230,7 +231,7 @@ export default function Inside() {
                         </dd>
                       </div>
                       <div className='sm:col-span-2'>
-                        <img
+                        <Image
                           className='w-full rounded-lg'
                           src='https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1712&q=80'
                           alt=''
