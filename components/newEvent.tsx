@@ -68,7 +68,7 @@ export default function NewEvent() {
                       Event Info
                     </h3>
                     <p className='mt-1 text-sm text-gray-500'>
-                      Set up your event and tell the audience what it's all
+                      Set up your event and tell the audience what it&apos;s all
                       about.
                     </p>
                   </div>
@@ -172,7 +172,7 @@ export default function NewEvent() {
                       Event Address
                     </h3>
                     <p className='mt-1 text-sm text-gray-500'>
-                      Where's the event located?
+                      Where&apos;s the event located?
                     </p>
                   </div>
                   <div className='mt-5 md:mt-0 md:col-span-2'>
@@ -330,7 +330,7 @@ export default function NewEvent() {
                           Entry Fee
                         </legend>
                         <p className='text-sm text-gray-500'>
-                          We've partnered with Stripe for simplified billing.
+                          We&apos;ve partnered with Stripe for simplified billing.
                         </p>
                       </div>
                       <div className='mt-4 space-y-4'>
@@ -400,14 +400,12 @@ export default function NewEvent() {
               </div>
 
               <div className='flex justify-end'>
-                <a href='/'>
                   <button
                     type='button'
                     className='bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
                   >
                     Cancel
                   </button>
-                </a>
                 <button
                   type='submit'
                   className='ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
