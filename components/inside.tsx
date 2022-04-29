@@ -137,6 +137,7 @@ export default function Inside() {
                     className='h-16 w-16 rounded-full'
                     src='https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
                     alt=''
+                    layout='fill'
                   />
                   <span
                     className='absolute inset-0 shadow-inner rounded-full'

@@ -62,6 +62,7 @@ export default function Comment() {
                         className='h-10 w-10 rounded-full'
                         src={`https://images.unsplash.com/photo-${comment.imageId}?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80`}
                         alt=''
+                        layout='fill'
                       />
                     </div>
                     <div>
@@ -98,9 +99,11 @@ export default function Comment() {
           <div className='flex space-x-3'>
             <div className='flex-shrink-0'>
               <Image
-                className='h-10 w-10 rounded-full'
+                className='rounded-full'
                 src={user.imageUrl}
                 alt=''
+                width={40}
+                height={40}
               />
             </div>
             <div className='min-w-0 flex-1'>
