@@ -118,7 +118,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Example() {
+export default function Example(events: any) {
   return (
     <>
       {/*
@@ -238,27 +238,28 @@ export default function Example() {
             <div className='mt-4'>
               <h1 className='sr-only'>Recent questions</h1>
               <ul role='list' className='space-y-4'>
-                {questions.map((question) => (
+                {Object.values(events).map((event) => (
                   <Question
-                    key={question.id}
-                    id={question.id}
-                    likes={question.likes}
-                    replies={question.replies}
-                    views={question.views}
+                    key={event.id}
+                    id={event.id}
+                    likes={event.likes}
+                    replies={event.replies}
+                    views={event.views}
                     // author={{
                     //   name: question.author.name,
                     //   imageUrl: question.author.imageUrl,
                     //   href: question.author.href,
                     // }}
-                    author={question.author}
-                    date={question.date}
-                    datetime={question.datetime}
-                    href={question.href}
-                    title={question.title}
-                    body={question.body}
+                    author={event.user}
+                    date={event.date}
+                    datetime={event.datetime}
+                    href={event.href}
+                    title={event.name}
+                    body={event.description}
                   />
                 ))}
               </ul>
+              {console.table(events)}
             </div>
           </main>
           <aside className='hidden xl:block xl:col-span-4'>

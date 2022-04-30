@@ -61,17 +61,17 @@ export default function Question(question: {
         <div>
           <div className='flex space-x-3'>
             <div className='flex-shrink-0'>
-              <img
+              {/* <img
                 className='h-10 w-10 rounded-full'
                 src={question.author.imageUrl}
                 alt=''
-              />
+              /> */}
             </div>
             <div className='min-w-0 flex-1'>
               <p className='text-sm font-medium text-gray-900'>
-                <a href={question.author.href} className='hover:underline'>
+                {/* <a href={question.author.href} className='hover:underline'>
                   {question.author.name}
-                </a>
+                </a> */}
               </p>
               <p className='text-sm text-gray-500'>
                 <a href={question.href} className='hover:underline'>
