@@ -25,7 +25,7 @@ const subNavigation = [
   { name: 'Sign Out', href: '#', icon: LogoutIcon },
 ];
 
-export default function profileNavigation() {
+export default function ProfileNavigation() {
   const router = useRouter();
   return (
     <aside className='py-6 px-2 sm:px-6 lg:py-0 lg:px-0 lg:col-span-3'>
