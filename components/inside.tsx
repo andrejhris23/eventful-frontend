@@ -75,7 +75,7 @@ const timeline = [
   {
     id: 4,
     type: eventTypes.advanced,
-    content: 'Advanced to interview by',
+    content: 'First inter',
     target: 'Bethany Blake',
     date: 'Sep 30',
     datetime: '2020-09-30',
@@ -83,7 +83,7 @@ const timeline = [
   {
     id: 5,
     type: eventTypes.completed,
-    content: 'Completed interview with',
+    content: 'Event Created by',
     target: 'Katherine Snyder',
     date: 'Oct 4',
     datetime: '2020-10-04',
@@ -130,8 +130,6 @@ export default function Inside(event) {
         <body class="h-full">
         ```
       */}
-
-      
 
       <div className='min-h-full'>
         <main className='py-10'>
