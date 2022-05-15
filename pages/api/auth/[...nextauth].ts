@@ -1,5 +1,6 @@
 import NextAuth from "next-auth/next";
 import GoogleProvider from 'next-auth/providers/google';
+import axios from '../../../utils/axios';
 
 export default NextAuth({
     providers: [
@@ -10,9 +11,16 @@ export default NextAuth({
     ],
     secret: process.env.NEXTAUTH_SECRET,
     callbacks: {
-        async signIn({user, account, profile, email, credentials}) {
+        async signIn({user, account, profile}) {
             if(account.provider === 'google') {
-
+                console.log(profile)
+                axios.post('/user/create', {
+                    email: profile.email,
+                    displayName: profile.name,
+                    firstName: profile.given_name,
+                    lastName: profile.family_name,
+                    image: profile.picture
+                });
                 // user.accessToken = await getTokenFromYourAPIServer('github', githubUser)
                 return true;
             }
