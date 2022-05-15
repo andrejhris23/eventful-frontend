@@ -27,7 +27,7 @@ import {
   UserIcon,
 } from '@heroicons/react/solid';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
-import Event from '../pages/event';
+import Event from '../pages/event/[eventId]';
 import Image from 'next/image';
 
 const user = {
@@ -115,7 +115,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Inside() {
+export default function Inside(event) {
   return (
     <>
       {/*
@@ -133,9 +133,9 @@ export default function Inside() {
             <div className='flex items-center space-x-5'>
               <div className='flex-shrink-0'>
                 <div className='relative'>
-                  <Image
+                  <img
                     className='h-16 w-16 rounded-full'
-                    src='https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
+                    src={event.host.image}
                     alt=''
                     layout='fill'
                   />
@@ -147,12 +147,12 @@ export default function Inside() {
               </div>
               <div>
                 <h1 className='text-2xl font-bold text-gray-900'>
-                  Ricardo Cooper
+                  {event.host.displayName}
                 </h1>
                 <p className='text-sm font-medium text-gray-500'>
                   Organizing{' '}
                   <a href='#' className='text-gray-900'>
-                    EventName
+                    {event.name}
                   </a>{' '}
                   on <time dateTime='2020-08-25'>August 25, 2020</time>
                 </p>
@@ -191,7 +191,7 @@ export default function Inside() {
                           Event Name
                         </dt>
                         <dd className='mt-1 text-sm text-gray-900'>
-                          Backend Developer
+                          {event.name}
                         </dd>
                       </div>
                       <div className='sm:col-span-1'>
@@ -207,7 +207,7 @@ export default function Inside() {
                           Event Capacity
                         </dt>
                         <dd className='mt-1 text-sm text-gray-900'>
-                          30.000 seats
+                          {event.capacity}
                         </dd>
                       </div>
                       <div className='sm:col-span-1'>
@@ -223,18 +223,13 @@ export default function Inside() {
                           About
                         </dt>
                         <dd className='mt-1 text-sm text-gray-900'>
-                          Fugiat ipsum ipsum deserunt culpa aute sint do nostrud
-                          anim incididunt cillum culpa consequat. Excepteur qui
-                          ipsum aliquip consequat sint. Sit id mollit nulla
-                          mollit nostrud in ea officia proident. Irure nostrud
-                          pariatur mollit ad adipisicing reprehenderit deserunt
-                          qui eu.
+                          {event.description}
                         </dd>
                       </div>
                       <div className='sm:col-span-2'>
                         <Image
                           className='w-full rounded-lg'
-                          src='https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1712&q=80'
+                          src={event.image}
                           alt=''
                           width={1310}
                           height={873}

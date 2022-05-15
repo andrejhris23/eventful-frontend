@@ -2,8 +2,8 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: ['tailwindui.com', 'images.unsplash.com']
-  }
+    domains: ['tailwindui.com', 'images.unsplash.com', 'gravatar.com'],
+  },
 };
 
 module.exports = nextConfig;

@@ -242,15 +242,15 @@ export default function Example(events: any) {
                   <Question
                     key={event.id}
                     id={event.id}
-                    likes={event.likes}
-                    replies={event.replies}
+                    price={event.price}
+                    capacity={event.capacity}
                     views={event.views}
                     // author={{
                     //   name: question.author.name,
                     //   imageUrl: question.author.imageUrl,
                     //   href: question.author.href,
                     // }}
-                    author={event.user}
+                    author={event.host}
                     date={event.date}
                     datetime={event.datetime}
                     href={event.href}
