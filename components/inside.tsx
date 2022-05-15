@@ -15,6 +15,8 @@
   ```
 */
 import { Fragment } from 'react';
+
+import Modal from './modal';
 import { Menu, Popover, Transition } from '@headlessui/react';
 import {
   ArrowNarrowLeftIcon,
@@ -128,6 +130,9 @@ export default function Inside(event) {
         <body class="h-full">
         ```
       */}
+
+      
+
       <div className='min-h-full'>
         <main className='py-10'>
           {/* Page header */}

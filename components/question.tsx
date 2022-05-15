@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Menu, Popover, Transition } from '@headlessui/react';
 import Link from 'next';
 import {
@@ -53,6 +53,8 @@ export default function Question(question: {
     title,
     body,
   } = question; */
+
+  const [shareKopche, setShareKopce] = useState('Share');
 
   return (
     <li
@@ -208,9 +210,12 @@ export default function Question(question: {
               <button
                 type='button'
                 className='inline-flex space-x-2 text-gray-400 hover:text-gray-500'
+                onClick={() => {
+                  navigator.clipboard.writeText(`/event/${question.id}`);
+                }}
               >
                 <ShareIcon className='h-5 w-5' aria-hidden='true' />
-                <span className='font-medium text-gray-900'>Share</span>
+                <span className='font-medium text-gray-900'>{shareKopche}</span>
               </button>
             </span>
           </div>
