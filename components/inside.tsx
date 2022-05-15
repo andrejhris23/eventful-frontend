@@ -116,6 +116,8 @@ function classNames(...classes: string[]) {
 }
 
 export default function Inside(event) {
+  const datejust = new Date();
+
   return (
     <>
       {/*
@@ -154,7 +156,7 @@ export default function Inside(event) {
                   <a href='#' className='text-gray-900'>
                     {event.name}
                   </a>{' '}
-                  on <time dateTime='2020-08-25'>August 25, 2020</time>
+                  on <time dateTime='2020-08-25'>August 31, 2022</time>
                 </p>
               </div>
             </div>
