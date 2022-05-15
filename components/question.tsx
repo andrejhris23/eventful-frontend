@@ -3,6 +3,7 @@ import { Menu, Popover, Transition } from '@headlessui/react';
 import Link from 'next';
 import {
   ChatAltIcon,
+  UsersIcon,
   CodeIcon,
   DotsVerticalIcon,
   EyeIcon,
@@ -12,6 +13,7 @@ import {
   ShareIcon,
   StarIcon,
   ThumbUpIcon,
+  CashIcon,
 } from '@heroicons/react/solid';
 import {
   BellIcon,
@@ -29,8 +31,8 @@ function classNames(...classes: string[]) {
 
 export default function Question(question: {
   id: any;
-  likes: any;
-  replies: any;
+  price: any;
+  capacity: any;
   views: any;
   author: any;
   date: any;
@@ -61,21 +63,23 @@ export default function Question(question: {
         <div>
           <div className='flex space-x-3'>
             <div className='flex-shrink-0'>
-              {/* <img
+              <img
                 className='h-10 w-10 rounded-full'
-                src={question.author.imageUrl}
+                src={question.author.image}
                 alt=''
-              /> */}
+              />
             </div>
             <div className='min-w-0 flex-1'>
               <p className='text-sm font-medium text-gray-900'>
-                {/* <a href={question.author.href} className='hover:underline'>
-                  {question.author.name}
-                </a> */}
+                <a href={question.author.href} className='hover:underline'>
+                  {question.author.displayName}
+                </a>
               </p>
               <p className='text-sm text-gray-500'>
                 <a href={question.href} className='hover:underline'>
-                  <time dateTime={question.datetime}>{question.date}</time>
+                  <time dateTime={question.datetime}>
+                    {question.date} Jun 30, 2020
+                  </time>
                 </a>
               </p>
             </div>
@@ -180,11 +184,12 @@ export default function Question(question: {
                 type='button'
                 className='inline-flex space-x-2 text-gray-400 hover:text-gray-500'
               >
-                <ThumbUpIcon className='h-5 w-5' aria-hidden='true' />
+                <CashIcon className='h-5 w-5' aria-hidden='true' />
                 <span className='font-medium text-gray-900'>
-                  {question.likes}
+                  ${question.price}
                 </span>
-                <span className='sr-only'>likes</span>
+
+                <span className='sr-only'>price</span>
               </button>
             </span>
             <span className='inline-flex items-center text-sm'>
@@ -192,9 +197,9 @@ export default function Question(question: {
                 type='button'
                 className='inline-flex space-x-2 text-gray-400 hover:text-gray-500'
               >
-                <ChatAltIcon className='h-5 w-5' aria-hidden='true' />
+                <UsersIcon className='h-5 w-5' aria-hidden='true' />
                 <span className='font-medium text-gray-900'>
-                  {question.replies}
+                  {question.capacity}
                 </span>
                 <span className='sr-only'>replies</span>
               </button>
@@ -211,7 +216,7 @@ export default function Question(question: {
           </div>
           <div className='flex text-sm'>
             <span className='inline-flex items-center text-sm'>
-              <a href={question.href}>
+              <a href={`/event/${question.id}`}>
                 <button
                   type='button'
                   className='inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'

@@ -58,13 +58,13 @@ export default function Navigation() {
                 <div className='flex-shrink-0 flex items-center'>
                   <Link href='/'>
                     <a className='flex items-center'>
-                      {/* <Image
+                      <img
                         className='inline h-8 w-auto'
                         src='https://tailwindui.com/img/logos/workflow-mark.svg?color=rose&shade=500'
                         alt='Workflow'
                         width={32}
                         height={16}
-                      /> */}
+                      />
                       <h2 className='text-3xl font-bold ml-2 inline-block flex-row items-center'>
                         Eventful
                       </h2>
@@ -119,11 +119,10 @@ export default function Navigation() {
                   <div>
                     <Menu.Button className='bg-white rounded-full flex focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500'>
                       <span className='sr-only'>Open user menu</span>
-                      <Image
+                      <img
                         className='h-8 w-8 rounded-full'
                         src={user.imageUrl}
                         alt=''
-                        layout='fill'
                       />
                     </Menu.Button>
                   </div>
