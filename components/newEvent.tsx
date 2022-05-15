@@ -39,14 +39,20 @@ export default function NewEvent() {
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
+    const brateMoj = 1;
 
     console.log(formFields);
 
     try {
-      const response = await Axios.post('http://localhost:8080/event/create', null, {
+      const response = await Axios.post('/event/create', null, {
         params: {
-          
-        }
+          name: eventName,
+          description: about,
+          image: coverUrl,
+          price: cost,
+          capacity,
+          userId: brateMoj,
+        },
       });
 
       const event = response.data;
