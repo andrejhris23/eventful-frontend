@@ -1,29 +1,15 @@
 import { ChevronRightIcon, StarIcon } from '@heroicons/react/solid'
-import React from 'react';
+import Image from 'next/image';
+import { signIn } from 'next-auth/react';
 
 const stats = [
-  { label: 'Founded', value: '2021' },
-  { label: 'Employees', value: '5' },
+  { label: 'Founded', value: '2022' },
+  { label: 'Employees', value: '10' },
   { label: 'Beta Users', value: '521' },
-  { label: 'Raised', value: '$25M' },
+  { label: 'Raised', value: '$1M' },
 ]
-const logos = [
-  { name: 'Transistor', url: 'https://tailwindui.com/img/logos/transistor-logo-gray-400.svg' },
-  { name: 'Mirage', url: 'https://tailwindui.com/img/logos/mirage-logo-gray-400.svg' },
-  { name: 'Tuple', url: 'https://tailwindui.com/img/logos/tuple-logo-gray-400.svg' },
-  { name: 'Laravel', url: 'https://tailwindui.com/img/logos/laravel-logo-gray-400.svg' },
-  { name: 'StaticKit', url: 'https://tailwindui.com/img/logos/statickit-logo-gray-400.svg' },
-  { name: 'Workcation', url: 'https://tailwindui.com/img/logos/workcation-logo-gray-400.svg' },
-]
+
 const footerNavigation = {
-  main: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Accessibility', href: '#' },
-    { name: 'Partners', href: '#' },
-  ],
   social: [
     {
       name: 'Facebook',
@@ -89,9 +75,7 @@ const footerNavigation = {
   ],
 }
 
-
 export default function Index() {
-
   return (
     <div className="bg-white">
     <main>
@@ -100,10 +84,12 @@ export default function Index() {
         <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24">
           <div>
             <div>
-              <img
+              <Image
                 className="h-11 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-mark.svg?color=rose&shade=500"
+                src='/logo.png'
                 alt="Workflow"
+                height='100%'
+                width='100%'
               />
             </div>
             <div className="mt-20">
@@ -112,18 +98,17 @@ export default function Index() {
                   The place where your favorite events are listed
                 </h1>
                 <p className="mt-6 text-xl text-gray-500">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
+                  Browse to a collection of events happening all around the world. Purchase tickets and enjoy them!
                 </p>
               </div>
               <form action="#" className="mt-12 sm:max-w-lg sm:w-full sm:flex">
-                <div className="mt-4 sm:mt-0 sm:ml-3">
                   <button
                     type="submit"
                     className="block w-full rounded-md border border-transparent px-5 py-3 bg-rose-500 text-base font-medium text-white shadow hover:bg-rose-600 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 sm:px-10"
+                    onClick={() => {signIn("google", {callbackUrl: `${window.location.origin}/home`})}}
                   >
-                    Login
+                    Join now
                   </button>
-                </div>
               </form>
               <div className="mt-6">
                 <div className="inline-flex items-center divide-x divide-gray-300">
@@ -171,11 +156,14 @@ export default function Index() {
               </svg>
             </div>
             <div className="relative pl-4 -mr-40 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-full lg:pl-12">
-              <img
-                className="w-full rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto lg:max-w-none"
-                src="https://tailwindui.com/img/component-images/task-app-rose.jpg"
-                alt=""
+              <div  className="w-full rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto lg:max-w-none">
+              <Image
+                src='/event.jpg'
+                alt="event"
+                layout='fill'
+                objectFit='contain'
               />
+              </div>
             </div>
           </div>
         </div>
@@ -238,8 +226,7 @@ export default function Index() {
                         <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                       </svg>
                       <p className="relative">
-                        Tincidunt integer commodo, cursus etiam aliquam neque, et. Consectetur pretium in volutpat,
-                        diam. Montes, magna cursus nulla feugiat dignissim id lobortis amet.
+                        Our events started to get way more traction once we decided to post them on eventful.
                       </p>
                     </div>
 
@@ -256,26 +243,8 @@ export default function Index() {
             {/* Content area */}
             <div className="pt-12 sm:pt-16 lg:pt-20">
               <h2 className="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">
-                On a mission to empower teams
+                On a mission to become the number one marketplace for events
               </h2>
-              <div className="mt-6 text-gray-500 space-y-6">
-                <p className="text-lg">
-                  Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque
-                  tristique pellentesque. Blandit amet, sed aenean erat arcu morbi. Cursus faucibus nunc nisl netus
-                  morbi vel porttitor vitae ut. Amet vitae fames senectus vitae.
-                </p>
-                <p className="text-base leading-7">
-                  Sollicitudin tristique eros erat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget
-                  pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna. Sollicitudin
-                  tristique eros erat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget pretium arcu
-                  vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna.
-                </p>
-                <p className="text-base leading-7">
-                  Rhoncus nisl, libero egestas diam fermentum dui. At quis tincidunt vel ultricies. Vulputate aliquet
-                  velit faucibus semper. Pellentesque in venenatis vestibulum consectetur nibh id. In id ut tempus
-                  egestas. Enim sit aliquam nec, a. Morbi enim fermentum lacus in. Viverra.
-                </p>
-              </div>
             </div>
 
             {/* Stats section */}
@@ -288,119 +257,6 @@ export default function Index() {
                   </div>
                 ))}
               </dl>
-              <div className="mt-10">
-                <a href="#" className="text-base font-medium text-rose-500">
-                  Learn more about how we&apos;re changing the world&nbsp&rarr;
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Logo cloud section */}
-      <div className="mt-32">
-        <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-24 lg:items-center">
-            <div>
-              <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-                Backed by world-renowned investors
-              </h2>
-              <p className="mt-6 max-w-3xl text-lg leading-7 text-gray-500">
-                Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque
-                tristique pellentesque. Blandit amet, sed aenean erat arcu morbi. Cursus faucibus nunc nisl netus
-                morbi vel porttitor vitae ut. Amet vitae fames senectus vitae.
-              </p>
-              <div className="mt-6">
-                <a href="#" className="text-base font-medium text-rose-500">
-                  Meet our investors and advisors&nbsp&rarr;
-                </a>
-              </div>
-            </div>
-            <div className="mt-12 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
-              {logos.map((logo) => (
-                <div key={logo.name} className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-                  <img className="max-h-12" src={logo.url} alt={logo.name} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* CTA section */}
-      <div className="relative mt-24 sm:mt-32 sm:py-16">
-        <div aria-hidden="true" className="hidden sm:block">
-          <div className="absolute inset-y-0 left-0 w-1/2 bg-gray-50 rounded-r-3xl" />
-          <svg className="absolute top-8 left-1/2 -ml-3" width={404} height={392} fill="none" viewBox="0 0 404 392">
-            <defs>
-              <pattern
-                id="8228f071-bcee-4ec8-905a-2a059a2cc4fb"
-                x={0}
-                y={0}
-                width={20}
-                height={20}
-                patternUnits="userSpaceOnUse"
-              >
-                <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
-              </pattern>
-            </defs>
-            <rect width={404} height={392} fill="url(#8228f071-bcee-4ec8-905a-2a059a2cc4fb)" />
-          </svg>
-        </div>
-        <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-          <div className="relative rounded-2xl px-6 py-10 bg-rose-500 overflow-hidden shadow-xl sm:px-12 sm:py-20">
-            <div aria-hidden="true" className="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0">
-              <svg
-                className="absolute inset-0 h-full w-full"
-                preserveAspectRatio="xMidYMid slice"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 1463 360"
-              >
-                <path
-                  className="text-rose-400 text-opacity-40"
-                  fill="currentColor"
-                  d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z"
-                />
-                <path
-                  className="text-rose-600 text-opacity-40"
-                  fill="currentColor"
-                  d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z"
-                />
-              </svg>
-            </div>
-            <div className="relative">
-              <div className="sm:text-center">
-                <h2 className="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
-                  Get notified when we&rsquo;re launching.
-                </h2>
-                <p className="mt-6 mx-auto max-w-2xl text-lg text-rose-100">
-                  Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque
-                  tristique pellentesque.
-                </p>
-              </div>
-              <form action="#" className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
-                <div className="min-w-0 flex-1">
-                  <label htmlFor="cta-email" className="sr-only">
-                    Email address
-                  </label>
-                  <input
-                    id="cta-email"
-                    type="email"
-                    className="block w-full border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-rose-500"
-                    placeholder="Enter your email"
-                  />
-                </div>
-                <div className="mt-4 sm:mt-0 sm:ml-3">
-                  <button
-                    type="submit"
-                    className="block w-full rounded-md border border-transparent px-5 py-3 bg-gray-900 text-base font-medium text-white shadow hover:bg-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-rose-500 sm:px-10"
-                  >
-                    Notify me
-                  </button>
-                </div>
-              </form>
             </div>
           </div>
         </div>
@@ -410,15 +266,6 @@ export default function Index() {
     {/* Footer section */}
     <footer className="mt-24 bg-gray-900 sm:mt-12">
       <div className="mx-auto max-w-md py-12 px-4 overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-        <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
-          {footerNavigation.main.map((item) => (
-            <div key={item.name} className="px-5 py-2">
-              <a href={item.href} className="text-base text-gray-400 hover:text-gray-300">
-                {item.name}
-              </a>
-            </div>
-          ))}
-        </nav>
         <div className="mt-8 flex justify-center space-x-6">
           {footerNavigation.social.map((item) => (
             <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-300">
@@ -427,7 +274,7 @@ export default function Index() {
             </a>
           ))}
         </div>
-        <p className="mt-8 text-center text-base text-gray-400">&copy; 2020 Workflow, Inc. All rights reserved.</p>
+        <p className="mt-8 text-center text-base text-gray-400">&copy; 2022 Eventful, Inc. All rights reserved.</p>
       </div>
     </footer>
   </div>
